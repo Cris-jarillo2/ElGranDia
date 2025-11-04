@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Gran Día</title>
+
+<style>
+  /* ----- Fuentes ----- */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500&display=swap');
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, #fff5f5 0%, #ffe9ea 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    color: #3a3a3a;
+  }
+
+  footer {
+    text-align: center;
+    margin: 80px 0 60px 0;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+  }
+
+  /* ----- Timeline general ----- */
+  .timeline {
+    position: relative;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Línea central (exactamente centrada) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background-color: #f5a6a6;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .container {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    left: 50%;
+  }
+
+  .content {
+    position: relative;
+    background: #fff3f4; /* más color */
+    border: 1px solid #f3b9b9;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 120px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+
+  /* Sub-líneas de conexión */
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 2px;
+    background-color: #f5a6a6;
+    z-index: 1;
+  }
+
+  .left::before {
+    right: -30px;
+  }
+
+  .right::before {
+    left: -30px;
+  }
+
+  /* Puntos sobre la línea central */
+  .container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #f5a6a6;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    z-index: 2;
+  }
+
+  .left::after {
+    right: -42px;
+  }
+
+  .right::after {
+    left: -42px;
+  }
+
+  /* Imágenes */
+  .event-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 10px auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  .event {
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .time {
+    font-size: 15px;
+    color: #4a5c6a;
+    margin-top: 4px;
+  }
+
+  /* Bloque final destacado */
+  .final-section {
+    text-align: center;
+    margin-top: 100px;
+    padding: 40px 20px;
+    background-color: #ffe1e3;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .final-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #d86b77;
+    margin-bottom: 15px;
+  }
+
+  .final-section .final-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+
+  .final-section .time {
+    font-size: 16px;
+    color: #555;
+    margin-top: 8px;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 31px;
+    }
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+    .container::before {
+      left: 30px;
+      width: 20px;
+    }
+    .container::after {
+      left: 20px;
+    }
+    .right {
+      left: 0%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>EL GRAN DÍA</h1>
+
+<div class="timeline">
+
+  <div class="container left">
+    <div class="content">
+      <img src="iglecia.jpg" alt="Ceremonia en la iglesia" class="event-img">
+      <div class="event">Ceremonia</div>
+      <div class="time">4:00 PM</div>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <img src="violin.png" alt="Música de ambiente" class="event-img">
+      <div class="event">Recepción</div>
+      <div class="time">6:00 PM</div>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <img src="Plato.jpg" alt="Cena" class="event-img">
+      <div class="event">Cena</div>
+      <div class="time">6:30 PM</div>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <img src="baile.png" alt="Baile" class="event-img">
+      <div class="event">¡A bailar!</div>
+      <div class="time">8:00 PM</div>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <img src="vals.jpg" alt="Vals" class="event-img">
+      <div class="event">Vals</div>
+      <div class="time">9:30 PM</div>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <img src="pastel.jpg" alt="Pastel" class="event-img">
+      <div class="event">Pastel</div>
+      <div class="time">10:30 PM</div>
+    </div>
+  </div>
+
+  <div class="container left">
+    <div class="content">
+      <img src="banda.png" alt="Banda" class="event-img">
+      <div class="event">Banda</div>
+      <div class="time">11:00 PM</div>
+    </div>
+  </div>
+
+  <div class="container right">
+    <div class="content">
+      <img src="batucada.png" alt="Batucada" class="event-img">
+      <div class="event">Batucada</div>
+      <div class="time">1:00 AM</div>
+    </div>
+  </div>
+
+  <!-- NUEVO BLOQUE -->
+  <div class="container left">
+    <div class="content">
+      <img src="gracias.jpg" alt="Fin del evento" class="event-img">
+      <div class="event">Fin del evento</div>
+      <div class="time">4:00 AM</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Sección final destacada -->
+<div class="final-section">
+  <h2>🌸 Gracias por venir 🌸</h2>
+  <img src="nay.jpg" alt="Gracias por venir" class="final-img">
+
+</div>
+
+<footer>FIN</footer>
+
+</body>
+</html>
